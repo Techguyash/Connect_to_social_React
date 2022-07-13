@@ -19,7 +19,7 @@ import {
   Storefront,
 } from "@mui/icons-material";
 
-const SideBar = () => {
+const SideBar = (props) => {
   return (
     <Box flex={1} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
       <Box position="fixed">
@@ -87,7 +87,9 @@ const SideBar = () => {
                 <ModeNight />
               </ListItemIcon>
               <Switch
-              // onChange={(e) => setMode(mode === "light" ? "dark" : "light")}
+                onChange={(e) =>
+                  props.setMode(props.mode === "light" ? "dark" : "light")
+                }
               />
             </ListItemButton>
           </ListItem>
